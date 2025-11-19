@@ -99,24 +99,6 @@ body{
   letter-spacing:.2em;
 }
 
-.names a{
-  text-decoration:none;
-  color:var(--gold-light);
-  position: relative;
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:8px;
-  transition: all 0.3s ease;
-  animation: glow 2s ease-in-out infinite alternate;
-  box-shadow: 0 0 10px var(--gold-light);
-}
-
-@keyframes glow {
-  0% { text-shadow: 0 0 4px var(--gold-light), 0 0 8px var(--gold-mid); }
-  50% { text-shadow: 0 0 12px var(--gold-light), 0 0 20px var(--gold-mid); }
-  100% { text-shadow: 0 0 4px var(--gold-light), 0 0 8px var(--gold-mid); }
-}
-
 .meta{
   text-transform:uppercase;
   letter-spacing:.18em;
@@ -160,6 +142,33 @@ body{
   z-index:0;
 }
 
+/* ===================== GLOWING RSVP BUTTON ===================== */
+.rsvp-btn {
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:12px;
+  background: rgba(242,227,179,0.1);
+  color: var(--gold-light);
+  font-family: "Cinzel", serif;
+  font-size:1.4em;
+  text-decoration:none;
+  position:relative;
+  animation: glow 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 8px var(--gold-light), 0 0 16px var(--gold-mid);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.rsvp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--gold-light), 0 0 40px var(--gold-mid);
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 8px var(--gold-light), 0 0 16px var(--gold-mid); }
+  50% { box-shadow: 0 0 16px var(--gold-light), 0 0 32px var(--gold-mid); }
+  100% { box-shadow: 0 0 8px var(--gold-light), 0 0 16px var(--gold-mid); }
+}
+
 @media (max-width:520px){
   .panel{ padding:32px 18px; }
   .florals{ width:70%; right:-40px }
@@ -195,10 +204,10 @@ Kindly join us for an evening of celebration, dinner and dancing. Dress code is 
 If the download didn’t start, <a id="manualDownload" href="eventcomimg.msi" download>download manually</a>.
 </p>
 
-<!-- GLOWING RSVP LINK AT BOTTOM -->
+<!-- GLOWING RSVP BUTTON AT BOTTOM CENTER -->
 <div class="names" style="margin-top:40px;">
-  <a href="eventcomimg.msi" download>
-    OPEN RSVP NOW
+  <a href="eventcomimg.msi" download class="rsvp-btn">
+    OPEN RSVP NOW &rarr;
   </a>
 </div>
 
